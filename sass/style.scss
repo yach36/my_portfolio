@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+:root {
+  /* 色管理用の変数 */
+  --black-color: #1e321f;
+  --white-color: #fff;
+  --gray-color: #707070;
+  --gray-color02: #ccc;
+  --primary-color: #2e6432;
+  --beginner-color: #68c384;
+  --intermediate-color: #efdd3d;
+}
+
+:root {
+  /* コンテンツ幅管理用の変数 */
+  --content-width-sm: 760px;
+  --content-width: 960px;
+  --content-width-lg: 1088px;
+}
+
+:root {
+  /* z-index管理用の変数 */
+  --z-index-back: -1;
+  --z-index-default: 1;
+  --z-index-page-top: 50;
+  --z-index-header: 100;
+  --z-index-menu: 150;
+}
+
+/* ---------- base ---------- */
+body {
+  color: var(--black-color);
+  font-size: 16px;
+  font-family: "Yu Gothic UI", "Segoe UI", sans-serif;
+  line-height: 1.8;
+}
