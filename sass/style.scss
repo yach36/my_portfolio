@@ -102,9 +102,6 @@ body {
   height: 32px;
   border: 1px solid var(--primary-color);
   border-radius: 50%;
-  &__current {
-    background: var(--primary-color);
-  }
 }
 
 .m_btn-show {
@@ -120,6 +117,14 @@ body {
     height: 100%;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
+  }
+}
+
+/* ---------- js ---------- */
+.js_scroll_gauge {
+  transition: background 0.5s;
+  &.is_active {
+    background: var(--primary-color);
   }
 }
 

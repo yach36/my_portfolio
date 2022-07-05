@@ -10,6 +10,7 @@
   <!-- script -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="l_header">
@@ -25,13 +26,13 @@
     <!-- /.l_header-inner -->
   </header>
   <div class="m_scroll_gauge-wrapper">
-    <div class="m_scroll_gauge m_scroll_gauge__current"></div>
-    <div class="m_scroll_gauge"></div>
-    <div class="m_scroll_gauge"></div>
+    <div class="m_scroll_gauge js_scroll_gauge is_active" id="js_scroll_gauge-1"></div>
+    <div class="m_scroll_gauge js_scroll_gauge" id="js_scroll_gauge-2"></div>
+    <div class="m_scroll_gauge js_scroll_gauge" id="js_scroll_gauge-3"></div>
   </div>
   <!-- /.m_scroll_gauge-wrapper -->
   <main class="l_main">
-    <section class="top_section">
+    <section class="top_section" id="top_section-1">
       <div class="top_kv">
         <div class="top_kv-inner l_container">
           <h1 class="top_kv_copy">
@@ -47,7 +48,7 @@
           <img src="img/icon-scroll.svg" alt="スクロールアイコン" class="top_scroll_icon">
         </p>
     </section>
-    <section class="top_section">
+    <section class="top_section" id="top_section-2">
       <div class="top_kv">
         <div class="top_kv-inner l_container">
           <h1 class="top_kv_copy">
@@ -62,7 +63,7 @@
         <a href="#" class="m_btn-show_link">Show more</a>
       </div>
     </section>
-    <section class="top_section">
+    <section class="top_section" id="top_section-3">
       <div class="top_kv">
         <div class="top_kv-inner l_container">
           <h1 class="top_kv_copy">

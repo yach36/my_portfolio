@@ -102,9 +102,6 @@ body {
   transform: translateX(-50%);
   z-index: var(--z-index-header);
 }
-.m_scroll_gauge__current {
-  background: var(--primary-color);
-}
 
 .m_btn-show {
   width: 300px;
@@ -120,6 +117,14 @@ body {
   height: 100%;
   border: 1px solid var(--primary-color);
   border-radius: 20px;
+}
+
+/* ---------- js ---------- */
+.js_scroll_gauge {
+  transition: background 0.5s;
+}
+.js_scroll_gauge.is_active {
+  background: var(--primary-color);
 }
 
 /* ---------- top ---------- */
