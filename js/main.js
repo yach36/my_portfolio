@@ -18,4 +18,7 @@ $(function() {
       $(`#js_scroll_gauge-${num}`).addClass("is_active");
     }
   });
+
+  /* ---------- barba ---------- */
+  barba.init();
 });
