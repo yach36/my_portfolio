@@ -1,4 +1,7 @@
 @charset "UTF-8";
+// scss変数
+$jpFont: "Yu Gothic UI";
+$enFont: "Segoe UI";
 
 :root {
   /* 色管理用の変数 */
@@ -41,6 +44,10 @@ body {
   padding: 0 32px;
 }
 
+.l_contents {
+  padding: 160px 0;
+}
+
 .l_header {
   width: 100%;
   height: 60px;
@@ -58,6 +65,26 @@ body {
   &_title {
     font-size: 14px;
     font-family: "Segoe UI";
+  }
+}
+
+.l_footer {
+  width: 100%;
+  height: 60px;
+  background: var(--primary-color);
+  &-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_copyright {
+    color: var(--white-color);
+    font: {
+      family: $enFont;
+      size: 14px;
+    }
   }
 }
 
@@ -125,6 +152,37 @@ body {
   }
 }
 
+.m_kv {
+  width: 100%;
+  height: 67vh;
+  background: linear-gradient(rgba(30, 50, 31, 0.25), rgba(30, 50, 31, 0.25)),
+              url(../img/top_kv.jpg) center bottom / cover;
+  &-inner {
+    height: 100%;
+    position: relative;
+  }
+  &_copy {
+    color: var(--white-color);
+    line-height: 1.3;
+    font-family: "Segoe UI";
+    font-size: 48px;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 20px;
+  }
+}
+
+/* ---------- utility ---------- */
+.u_mt-16 {
+  margin-top: 16px;
+}
+.u_mt-40 {
+  margin-top: 40px;
+}
+.u_mt-60 {
+  margin-top: 60px;
+}
+
 /* ---------- js ---------- */
 .js_scroll_gauge {
   transition: background 0.5s;
@@ -138,7 +196,7 @@ body {
   height: 100vh;
   padding-top: 60px;
   position: relative;
-  &:nth-child(2n) .top_kv_copy {
+  &:nth-child(2n + 1) .top_kv_copy {
     right: 32px;
   }
 }
@@ -189,4 +247,149 @@ body {
   top: calc(100% - 52px - (100% - 67vh - 52px) / 2);
   left: 50%;
   transform: translate(-50%, 50%);
+}
+
+/* ---------- about ---------- */
+.about_contents {
+  & p {
+    font: {
+      size: 14px;
+      family: $jpFont;
+    }
+    line-height: 2;
+  }
+  & h4 {
+    width: 80px;
+    height: 40px;
+    border: 1px solid var(--black-color);
+    border-radius: 20px;
+    font-size: 14px;
+    font-family: $jpFont;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+  }
+  & h5 {
+    font-size: 14px;
+    font-family: $jpFont;
+    margin-top: 60px;
+    padding-left: 32px + 12px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--black-color);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.about_intro {
+  &_head {
+    display: flex;
+    flex-direction: column;
+    font: {
+      size: 36px;
+      weight: bold;
+      family: $jpFont;
+    }
+    &-en {
+      font: {
+        size: 20px;
+        weight: normal;
+        family: $enFont;
+      }
+    }
+  }
+  &_img {
+    &-wrapper {
+      margin-top: 60px;
+    }
+    width: 100%;
+  }
+}
+
+.about_skill {
+  padding-top: 120px;
+  &_head {
+    font: {
+      family: $enFont;
+      size: 32px;
+    }
+    text-align: center;
+  }
+  &_list {
+    margin-top: 80px;
+  }
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+  &_info {
+    display: flex;
+    align-items: center;
+  }
+  &_icon-wrapper {
+    width: 38px;
+    height: 38px;
+    position: relative;
+    &__sub {
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+  &_name-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  &_name {
+    font: {
+      family: $enFont;
+      size: 12px;
+    }
+    line-height: 1.5;
+  }
+  &_period {
+    font: {
+      family: $enFont;
+      size: 10px;
+    }
+    margin-top: 8px;
+  }
+  &_bar {
+    &-wrapper {
+      display: flex;
+      gap: 12px;
+    }
+    display: block;
+    width: 4px;
+    height: 32px;
+    background: var(--gray-color02);
+    border-radius: 2px;
+    &__beginner {
+      background: var(--beginner-color);
+    }
+    &__intermediate {
+      background: var(--intermediate-color);
+    }
+  }
 }
