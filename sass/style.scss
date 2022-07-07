@@ -144,6 +144,7 @@ body {
     height: 100%;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     transition: background 0.25s, color 0.5s;
     &:hover {
       background: var(--primary-color);
@@ -155,8 +156,6 @@ body {
 .m_kv {
   width: 100%;
   height: 67vh;
-  background: linear-gradient(rgba(30, 50, 31, 0.25), rgba(30, 50, 31, 0.25)),
-              url(../img/top_kv.jpg) center bottom / cover;
   &-inner {
     height: 100%;
     position: relative;
@@ -204,10 +203,20 @@ body {
 .top_kv {
   width: 100%;
   height: 67vh;
-  background: linear-gradient(rgba(30, 50, 31, 0.25), rgba(30, 50, 31, 0.25)),
-              url(../img/top_kv.jpg) center bottom / cover;
   position: absolute;
   top: 80px;
+  &__top {
+    background: linear-gradient(rgba(30, 50, 31, 0.35), rgba(30, 50, 31, 0.35)),
+    url(../img/top_kv.jpg) center bottom / cover;
+  }
+  &__about {
+    background: linear-gradient(rgba(30, 50, 31, 0.35), rgba(30, 50, 31, 0.35)),
+    url(../img/about_kv.jpg) center / cover;
+  }
+  &__works {
+    background: linear-gradient(rgba(30, 50, 31, 0.35), rgba(30, 50, 31, 0.35)),
+    url(../img/works_kv.jpg) center / cover;
+  }
   &-inner {
     height: 100%;
     position: relative;
@@ -250,6 +259,11 @@ body {
 }
 
 /* ---------- about ---------- */
+.about_kv {
+  background: linear-gradient(rgba(30, 50, 31, 0.35), rgba(30, 50, 31, 0.35)),
+  url(../img/about_kv.jpg) center / cover;
+}
+
 .about_contents {
   & p {
     font: {
@@ -346,6 +360,9 @@ body {
       width: 24px;
       height: 24px;
       position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       &:nth-child(1) {
         top: 0;
         left: 0;
