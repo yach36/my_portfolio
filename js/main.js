@@ -20,5 +20,14 @@ $(function() {
   });
 
   /* ---------- barba ---------- */
-  barba.init();
+  // barba.init();
+
+  /* ---------- ハンバーガーメニュー ---------- */
+  $(".js_hamburger").on("click", function() {
+    $(this).toggleClass("is_active");
+    $(this).children(".js_hamburger_bar").toggleClass("is_active");
+    $(".js_header_title").toggleClass("is_active");
+    $(".js_header-nav").toggleClass("is_active")
+    $(".js_main").toggleClass("is_hidden")
+  });
 });

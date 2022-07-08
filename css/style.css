@@ -2,6 +2,7 @@
 :root {
   /* 色管理用の変数 */
   --black-color: #1e321f;
+  --black-color02: #000;
   --white-color: #fff;
   --gray-color: #707070;
   --gray-color02: #ccc;
@@ -62,6 +63,45 @@ body {
 .l_header_title {
   font-size: 14px;
   font-family: "Segoe UI";
+  z-index: var(--z-index-menu);
+}
+.l_header-nav {
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(var(--black-color02), var(--primary-color));
+  pointer-events: none;
+}
+.l_header-nav-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.l_header-nav_list {
+  text-align: center;
+}
+.l_header-nav_item {
+  color: var(--white-color);
+  line-height: 1.3;
+  font-family: "Segoe UI";
+  font-size: 60px;
+}
+.l_header-nav_item:not(:first-child) {
+  margin-top: 40px;
+}
+.l_header-nav_link {
+  width: 100%;
+  height: 100%;
+}
+.l_header-nav_sns {
+  margin-top: 80px;
+  display: flex;
+  gap: 48px;
 }
 
 .l_footer {
@@ -87,6 +127,7 @@ body {
   width: 40px;
   height: 20px;
   position: relative;
+  z-index: var(--z-index-menu);
 }
 .m_hamburger_bar {
   display: block;
@@ -100,6 +141,7 @@ body {
 }
 .m_hamburger_bar:nth-child(2) {
   top: 50%;
+  left: 0;
   transform: translateY(-50%);
 }
 .m_hamburger_bar:nth-child(3) {
@@ -122,7 +164,7 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: var(--z-index-header);
+  z-index: var(--z-index-page-top);
 }
 
 .m_btn-show {
@@ -179,6 +221,53 @@ body {
 }
 
 /* ---------- js ---------- */
+.js_header_title {
+  transition: color 0.25s 0.5s;
+}
+.js_header_title.is_active {
+  color: var(--white-color);
+}
+
+.js_header-nav {
+  transition: top 0.25s 0.5s;
+}
+.js_header-nav.is_active {
+  top: 0;
+  pointer-events: auto;
+}
+
+.js_hamburger {
+  transition: width 0.25s, height 0.25s;
+}
+.js_hamburger.is_active {
+  width: 28px;
+  height: 28px;
+}
+
+.js_hamburger_bar {
+  transition: transform 0.25s, top 0.25s, opacity 0.1s, background 0.25s 0.5s;
+}
+.js_hamburger_bar.is_active {
+  background: var(--white-color);
+}
+.js_hamburger_bar.is_active:nth-child(1) {
+  transform: rotate(315deg);
+  top: 50%;
+}
+.js_hamburger_bar.is_active:nth-child(2) {
+  opacity: 0;
+  pointer-events: none;
+}
+.js_hamburger_bar.is_active:nth-child(3) {
+  transform: rotate(225deg);
+  top: 50%;
+}
+
+.js_main.is_hidden {
+  pointer-events: none;
+  overflow: hidden;
+}
+
 .js_scroll_gauge {
   transition: background 0.5s;
 }
