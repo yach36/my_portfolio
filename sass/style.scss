@@ -136,6 +136,7 @@ body {
   width: 40px;
   height: 20px;
   position: relative;
+  cursor: pointer;
   z-index: var(--z-index-menu);
   &_bar {
     display: block;
@@ -229,49 +230,58 @@ body {
 
 /* ---------- js ---------- */
 .js_header_title {
-  transition: color 0.25s 0.5s;
   &.is_active {
+    color: var(--white-color) !important;
+  }
+  &__not-top {
     color: var(--white-color);
+    &.is_primary {
+      color: var(--primary-color);
+    }
   }
 }
 
 .js_header-nav {
-  transition: top 0.25s 0.5s;
   &.is_active {
     top: 0;
     pointer-events: auto;
   }
 }
 
-.js_hamburger{
-  transition: width 0.25s, height 0.25s;
+.js_hamburger {
   &.is_active {
     width: 28px;
     height: 28px;
   }
-}
-.js_hamburger_bar {
-  transition: transform 0.25s, top 0.25s, opacity 0.1s, background 0.25s 0.5s;
-  &.is_active {
-    background: var(--white-color);
-    &:nth-child(1) {
-      transform: rotate(315deg);
-      top: 50%;
+  &_bar {
+    &.is_active {
+      background: var(--white-color) !important;
+      &:nth-child(1) {
+        transform: rotate(315deg);
+        top: 50%;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(225deg);
+        top: 50%;
+      }
     }
-    &:nth-child(2) {
-      opacity: 0;
-      pointer-events: none;
-    }
-    &:nth-child(3) {
-      transform: rotate(225deg);
-      top: 50%;
+    &__not-top {
+      background: var(--white-color);
+      &.is_primary {
+        background: var(--primary-color);
+      }
     }
   }
 }
 
-.js_main.is_hidden {
-  pointer-events: none;
+.js_body.is_hidden {
   overflow: hidden;
+}
+.js_main.is_disabled {
+  pointer-events: none;
 }
 
 .js_scroll_gauge {
