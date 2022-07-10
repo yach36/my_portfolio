@@ -37,6 +37,7 @@ $(function() {
     $(".js_header-nav").css({
       transition: "top 0.25s 0.5s"
     });
+
     if (++clickNum % 2 == 1) {
       $(this).addClass("is_active");
       $(this).children(".js_hamburger_bar").addClass("is_active");
@@ -56,6 +57,28 @@ $(function() {
       $(".js_main").removeClass("is_disabled");
     }
 
+  });
+
+  /* ---------- ヘッダーリンクのホバー時の処理 ---------- */
+  $(".js_header-nav_link").on({
+    "mouseenter": function() {
+      $(this).children(".js_header-nav_link-bar").animate({
+        width: "100%",
+        height: "3px",
+        borderRadius: "2px"
+      },
+      250,
+      "easeInOutQuart");
+    },
+    "mouseleave": function() {
+      $(this).children(".js_header-nav_link-bar").animate({
+        width:  0,
+        height: 0,
+        borderRadius: 0
+      },
+      250,
+      "easeInOutQuart");
+    }
   });
 
   /* ---------- スクロール時にヘッダーの色を変える ---------- */
