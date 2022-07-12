@@ -34,7 +34,6 @@ body {
   font-family: "Yu Gothic UI", "Segoe UI", sans-serif;
   line-height: 1.8;
   letter-spacing: 0.1em;
-  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 body::-webkit-scrollbar {
@@ -496,5 +495,4 @@ body::-webkit-scrollbar {
 }
 .about_skill_bar__intermediate {
   background: var(--intermediate-color);
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
