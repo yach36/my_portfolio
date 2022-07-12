@@ -26,7 +26,7 @@ $(function() {
   /* ---------- ハンバーガーメニュー ---------- */
   $(".js_hamburger").on("click", function() {
     $(this).css({
-      transition: "width 0.25s, height 0.25s",
+      transition: "width 0.25s, height 0.25s"
     });
     $(this).children(".js_hamburger_bar").css({
       transition: "transform 0.25s, top 0.25s, opacity 0.1s, background 0.25s 0.5s"
@@ -62,22 +62,21 @@ $(function() {
   /* ---------- ヘッダーリンクのホバー時の処理 ---------- */
   $(".js_header-nav_link").on({
     "mouseenter": function() {
-      $(this).children(".js_header-nav_link-bar").animate({
-        width: "100%",
-        height: "3px",
-        borderRadius: "2px"
-      },
-      250,
-      "easeInOutQuart");
+      $(this).addClass("is_active");
     },
     "mouseleave": function() {
-      $(this).children(".js_header-nav_link-bar").animate({
-        width:  0,
-        height: 0,
-        borderRadius: 0
-      },
-      250,
-      "easeInOutQuart");
+      $(this).removeClass("is_active");
+    }
+  });
+  // SNSリンク
+  $(".js_header-nav_sns-link").on({
+    "mouseenter": function() {
+      $(this).addClass("is_active");
+      $(".js_header-nav_sns-link").not($(this)).addClass("is_other");
+    },
+    "mouseleave": function() {
+      $(this).removeClass("is_active");
+      $(".js_header-nav_sns-link").not($(this)).removeClass("is_other");
     }
   });
 
