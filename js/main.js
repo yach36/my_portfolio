@@ -86,10 +86,10 @@ $(function() {
     let kvHeight = $(".js_kv").height();
 
     $(".js_header_title__not-top").css({
-      transition: "color 0s 0s"
+      transition: "color 0.5s 0s"
     });
     $(".js_hamburger_bar__not-top").css({
-      transition: "background 0s 0s"
+      transition: "background 0.5s 0s"
     });
 
     if (titleTop < kvHeight) {
